@@ -1,0 +1,16 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: fableforge-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: fableforge
+      POSTGRES_USER: fableforge
+      POSTGRES_PASSWORD: fableforge
+    volumes:
+      - fableforge-postgres:/var/lib/postgresql/data
+
+volumes:
+  fableforge-postgres:
